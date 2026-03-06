@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Información Bancaria</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+max-width:420px;
+text-align:center;
+}
+
+.info{
+background:#f1f1f1;
+padding:15px;
+border-radius:8px;
+text-align:left;
+white-space:pre-line;
+}
+
+button{
+margin-top:15px;
+padding:12px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
+
+.copy{
+background:#007bff;
+color:white;
+}
+
+.msg{
+margin-top:10px;
+color:green;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>💳 Información Bancaria</h2>
+
+<div id="bankInfo" class="info">
+BANCO: ITAU
+COM NIKO SPA
+RUT: 77860543-0
+CUENTA CORRIENTE: 228168040
+EMAIL: Nikospa8888@gmail.com
+</div>
+
+<button class="copy" onclick="copyInfo()">📋 Copiar Información</button>
+
+<div id="msg" class="msg"></div>
+
+</div>
+
+<script>
+
+function copyInfo(){
+
+const text=document.getElementById("bankInfo").innerText;
+
+navigator.clipboard.writeText(text).then(()=>{
+document.getElementById("msg").innerText="✅ Información copiada";
+});
+
+}
+
+</script>
+
+</body>
+</html>
